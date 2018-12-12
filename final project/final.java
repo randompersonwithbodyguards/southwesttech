@@ -256,7 +256,7 @@ class Final {
 					System.out.println("Miss");
 				}
 				System.out.println(" Player 1, Type d and press enter to end your turn");
-				starter = input.nextLine();
+				starter = input.next();
 				if (starter.equalsIgnoreCase("d")){
 					clearScreen();
 				}	
@@ -287,7 +287,7 @@ class Final {
 				System.out.println("Miss");
 			}
 			System.out.println("p2, Type f and press enter to end your turn");
-			starter = input.nextLine();
+			starter = input.next();
 			if (starter.equalsIgnoreCase("f")){
 				clearScreen();
 			}	
@@ -306,7 +306,7 @@ class Final {
 				
 				// and then create a checker for that
 				if (player1boats[guessy][guessx].equalsIgnoreCase(" X ")){
-					player1boats[guessy][guessx] = " ❌";
+					player1boats[guessy][guessx] = "❌";
 					player2guesses[guessy][guessx] = " ❌";
 					printingPress(player2guesses);
 					System.out.println("Hit");
@@ -385,5 +385,5 @@ class Final {
 			for(int i = 0; i < 150; i++){
 				System.out.print("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
 			}
-		}
+		} 
 	}
