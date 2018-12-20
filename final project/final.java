@@ -64,58 +64,134 @@ class Final {
 		
 		//sets up boats for p1
 		if (starter.equalsIgnoreCase("")){
-			System.out.println("Your first ship is the submarine, it is 3 spaces long, ships can only be placed horizontally or vertically. Type the coordinates of your ship with one space between the number and letter. Ex: 2 B");
+			System.out.println("Your first ship is the submarine, it is 3 spaces long, ships can only be placed horizontally or vertically. Type the coordinates of your ship with one space between the number and letter.\nEx: 2 B \n4 b");
 			
 			printingPress(player1boats);
 			
-			int count = 0;
 			//submarine 3
-			while (count < 3){
-				int ycor = input.nextInt();
-				int xcor = lettersMagic(input.next());
-				player1boats[ycor][xcor] = " X ";
-				printingPress(player1boats);
-				count++;
+			int workingY = input.nextInt();
+			int workingX = lettersMagic(input.next());
+			
+			int finalY = input.nextInt();
+			int finalX = lettersMagic(input.next());
+
+			
+			for (int count = 0; count < 3; count++){
+				
+				player1boats[workingY][workingX] = " X ";
+				
+				if (workingX == finalX){
+					workingY++;
+				}
+				 
+				else if (workingY == finalY) {
+					workingX++;
+				}
+				
+				else {
+					System.out.println("That is not a correct value, or the code messed up");
+				}
 			}
-			count = 0;
+			
 			System.out.println("This one is the Carrier, it is 5 long. ");
 			printingPress(player1boats);
-			while (count < 5){
-				int ycor = input.nextInt();
-				int xcor = lettersMagic(input.next());
-				player1boats[ycor][xcor] = " X ";
-				printingPress(player1boats);
-				count++;
+						
+			workingY = input.nextInt();
+			workingX = lettersMagic(input.next());
+			
+			finalY = input.nextInt();
+			finalX = lettersMagic(input.next());
+			
+			for (int count = 0; count < 5; count++){
+				
+				player1boats[workingY][workingX] = " X ";
+				
+				if (workingX == finalX){
+					workingY++;
+				}
+				 
+				else if (workingY == finalY) {
+					workingX++;
+				}
+				
+				else {
+					System.out.println("That is not a correct value, or the code messed up");
+				}
 			}
-			count = 0;
 			System.out.println("This one is the Battleship, it is 4 spaces long. ");
 			printingPress(player1boats);
-			while (count < 4){
-				int ycor = input.nextInt();
-				int xcor = lettersMagic(input.next());
-				player1boats[ycor][xcor] = " X ";
-				printingPress(player1boats);
-				count++;
+						
+			workingY = input.nextInt();
+			workingX = lettersMagic(input.next());
+			
+			finalY = input.nextInt();
+			finalX = lettersMagic(input.next());
+		
+			for (int count = 0; count < 4; count++){
+				
+				player1boats[workingY][workingX] = " X ";
+				
+				if (workingX == finalX){
+					workingY++;
+				}
+				 
+				else if (workingY == finalY) {
+					workingX++;
+				}
+				
+				else {
+					System.out.println("That is not a correct value, or the code messed up");
+				}
 			}
-			count = 0;
 			System.out.println("This one is the Destroyer, it is 3 long. ");
 			printingPress(player1boats);
-			while (count < 3){
-				int ycor = input.nextInt();
-				int xcor = lettersMagic(input.next());
-				player1boats[ycor][xcor] = " X ";
-				printingPress(player1boats);
-				count++;
+						
+			workingY = input.nextInt();
+			workingX = lettersMagic(input.next());
+			
+			finalY = input.nextInt();
+			finalX = lettersMagic(input.next());
+
+			for (int count = 0; count < 3; count++){
+				
+				player1boats[workingY][workingX] = " X ";
+				
+				if (workingX == finalX){
+					workingY++;
+				}
+				 
+				else if (workingY == finalY) {
+					workingX++;
+				}
+				
+				else {
+					System.out.println("That is not a correct value, or the code messed up");
+				}
 			}
-			count = 0;
 			System.out.println("This one is the Patrol Boat, it is 2 spaces long. ");
-			printingPress(player1boats);
-			while (count < 2){
-				int ycor = input.nextInt();
-				int xcor = lettersMagic(input.next());
-				player1boats[ycor][xcor] = " X ";
-				printingPress(player1boats);
-				count++;
+			printingPress(player1boats);	
+						
+			workingY = input.nextInt();
+			workingX = lettersMagic(input.next());
+			
+			finalY = input.nextInt();
+			finalX = lettersMagic(input.next());
+
+			for (int count = 0; count < 2; count++){
+				
+				player1boats[workingY][workingX] = " X ";
+				
+				if (workingX == finalX){
+					workingY++;
+				}
+				 
+				else if (workingY == finalY) {
+					workingX++;
+				}
+				
+				else {
+					System.out.println("That is not a correct value, or the code messed up");
+				}
 			}
 		}
 		
@@ -133,57 +209,135 @@ class Final {
 		//sets up boats for p2
 		if (starter.equalsIgnoreCase("ready")){
 			
-			System.out.println("Your first ship is 3 spaces long, ships can only be placed horizontally or vertically. Type the coordinates of your ship with one space between the number and letter. Ex: 2 B");
+			System.out.println("Your first ship is 3 spaces long, ships can only be placed horizontally or vertically. Type the coordinates of one end of your ship with one space between the number and letter, then type the other end.\nEx: 2 B\n 2 D");
 			
 			printingPress(player2boats);
 			
-			int count = 0;
-			while (count < 3){
-				int ycor = input.nextInt();
-				int xcor = lettersMagic(input.next());
-				player2boats[ycor][xcor] = " X ";
-				printingPress(player2boats);
-				count++;
+			int workingY = input.nextInt();
+			int workingX = lettersMagic(input.next());
+			
+			int finalY = input.nextInt();
+			int finalX = lettersMagic(input.next());
+			
+			for (int count = 0; count < 3; count++){
+				
+				player2boats[workingY][workingX] = " X ";
+				
+				if (workingX == finalX){
+					workingY++;
+				}
+				 
+				else if (workingY == finalY) {
+					workingX++;
+				}
+				
+				else {
+					System.out.println("That is not a correct value, or the code messed up");
+				}
 			}
-			count = 0;
+			
 			System.out.println("This one is the Carrier, it is 5 long. ");
 			printingPress(player2boats);
-			while (count < 5){
-				int ycor = input.nextInt();
-				int xcor = lettersMagic(input.next());
-				player2boats[ycor][xcor] = " X ";
-				printingPress(player2boats);
-				count++;
+						
+			workingY = input.nextInt();
+			workingX = lettersMagic(input.next());
+			
+			finalY = input.nextInt();
+			finalX = lettersMagic(input.next());
+
+			for (int count = 0; count < 5; count++){
+				
+				player2boats[workingY][workingX] = " X ";
+				
+				if (workingX == finalX){
+					workingY++;
+				}
+				 
+				else if (workingY == finalY) {
+					workingX++;
+				}
+				
+				else {
+					System.out.println("That is not a correct value, or the code messed up");
+				}
 			}
-			count = 0;
+			
 			System.out.println("This one is the Battleship, it is 4 spaces long. ");
 			printingPress(player2boats);
-			while (count < 4){
-				int ycor = input.nextInt();
-				int xcor = lettersMagic(input.next());
-				player2boats[ycor][xcor] = " X ";
-				printingPress(player2boats);
-				count++;
+						
+			workingY = input.nextInt();
+			workingX = lettersMagic(input.next());
+			
+			finalY = input.nextInt();
+			finalX = lettersMagic(input.next());
+
+			for (int count = 0; count < 4; count++){
+				
+				player2boats[workingY][workingX] = " X ";
+				
+				if (workingX == finalX){
+					workingY++;
+				}
+				 
+				else if (workingY == finalY) {
+					workingX++;
+				}
+				
+				else {
+					System.out.println("That is not a correct value, or the code messed up");
+				}
 			}
-			count = 0;
+			
 			System.out.println("This one is the Destroyer, it is 3 long. ");
 			printingPress(player2boats);
-			while (count < 3){
-				int ycor = input.nextInt();
-				int xcor = lettersMagic(input.next());
-				player2boats[ycor][xcor] = " X ";
-				printingPress(player2boats);
-				count++;
+						
+			workingY = input.nextInt();
+			workingX = lettersMagic(input.next());
+			
+			finalY = input.nextInt();
+			finalX = lettersMagic(input.next());
+
+			for (int count = 0; count < 3; count++){
+				
+				player2boats[workingY][workingX] = " X ";
+				
+				if (workingX == finalX){
+					workingY++;
+				}
+				 
+				else if (workingY == finalY) {
+					workingX++;
+				}
+				
+				else {
+					System.out.println("That is not a correct value, or the code messed up");
+				}
 			}
-			count = 0;
+			
 			System.out.println("This one is the Patrol Boat, it is 2 spaces long. ");
 			printingPress(player2boats);
-			while (count < 2){
-				int ycor = input.nextInt();
-				int xcor = lettersMagic(input.next());
-				player2boats[ycor][xcor] = " X ";
-				printingPress(player2boats);
-				count++;
+						
+			workingY = input.nextInt();
+			workingX = lettersMagic(input.next());
+			
+			finalY = input.nextInt();
+			finalX = lettersMagic(input.next());
+
+			for (int count = 0; count < 5; count++){
+				
+				player2boats[workingY][workingX] = " X ";
+				
+				if (workingX == finalX){
+					workingY++;
+				}
+				 
+				else if (workingY == finalY) {
+					workingX++;
+				}
+				
+				else {
+					System.out.println("That is not a correct value, or the code messed up");
+				}
 			}
 		}
 		
@@ -212,8 +366,8 @@ class Final {
 			
 			// and then create a checker for that
 			if (player2boats[guessy][guessx].equalsIgnoreCase(" X ")){
-				player2boats[guessy][guessx] = " ❌";
-				player1guesses[guessy][guessx] = " ❌";
+				player2boats[guessy][guessx] = " X ";
+				player1guesses[guessy][guessx] = " X ";
 				printingPress(player1guesses);
 				System.out.println("Hit");
 				hitsp1++;
@@ -244,8 +398,8 @@ class Final {
 				
 				// and then create a checker for that
 				if (player2boats[guessy][guessx].equalsIgnoreCase(" X ")){
-					player2boats[guessy][guessx] = " ❌";
-					player1guesses[guessy][guessx] = " ❌";
+					player2boats[guessy][guessx] = " X ";
+					player1guesses[guessy][guessx] = " X ";
 					printingPress(player1guesses);
 					System.out.println("Hit");
 					hitsp1++;
@@ -275,8 +429,8 @@ class Final {
 			
 			// and then create a checker for that
 			if (player1boats[guessy][guessx].equalsIgnoreCase(" X ")){
-				player1boats[guessy][guessx] = " ❌";
-				player2guesses[guessy][guessx] = " ❌";
+				player1boats[guessy][guessx] = " X ";
+				player2guesses[guessy][guessx] = " X";
 				printingPress(player2guesses);
 				System.out.println("Hit");
 				hitsp2++;
@@ -306,8 +460,8 @@ class Final {
 				
 				// and then create a checker for that
 				if (player1boats[guessy][guessx].equalsIgnoreCase(" X ")){
-					player1boats[guessy][guessx] = " ❌";
-					player2guesses[guessy][guessx] = " ❌";
+					player1boats[guessy][guessx] = " X ";
+					player2guesses[guessy][guessx] = " X ";
 					printingPress(player2guesses);
 					System.out.println("Hit");
 					hitsp2++;
@@ -385,5 +539,5 @@ class Final {
 			for(int i = 0; i < 150; i++){
 				System.out.print("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
 			}
-		} 
+		}
 	}
