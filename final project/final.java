@@ -64,7 +64,7 @@ class Final {
 		
 		//sets up boats for p1
 		if (starter.equalsIgnoreCase("")){
-			System.out.println("Your first ship is the submarine, it is 3 spaces long, ships can only be placed horizontally or vertically. Type the coordinates of your ship with one space between the number and letter.\nEx: 2 B \n4 b");
+			System.out.println("Your first ship is the submarine, it is 3 spaces long, ships can only be placed horizontally or vertically. Type the coordinates of one end of your ship with one space between the number and letter.\nEx: 2 B \n4 b \n then type the other end coordinates ");
 			
 			printingPress(player1boats);
 			
