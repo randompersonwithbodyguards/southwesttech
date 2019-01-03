@@ -1,0 +1,18 @@
+This project is just an ascii version of battleship. It is meant to be played by two different people on a local computer.
+
+this is the code that places the boats
+for (int count = 0; count < 3; count++){
+				
+				player2boats[workingY][workingX] = " X ";
+				
+				if (workingX == finalX){
+					workingY++;
+				}
+				 
+				else if (workingY == finalY) {
+					workingX++;
+				}
+        
+       
+my motivation for creating this is i thought it would be pretty cool if i was able to do it and it was
+
