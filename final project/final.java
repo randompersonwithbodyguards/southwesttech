@@ -430,7 +430,7 @@ class Final {
 			// and then create a checker for that
 			if (player1boats[guessy][guessx].equalsIgnoreCase(" X ")){
 				player1boats[guessy][guessx] = " X ";
-				player2guesses[guessy][guessx] = " X";
+				player2guesses[guessy][guessx] = " X 2";
 				printingPress(player2guesses);
 				System.out.println("Hit");
 				hitsp2++;
