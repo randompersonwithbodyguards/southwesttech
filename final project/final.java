@@ -366,7 +366,7 @@ class Final {
 			
 			// and then create a checker for that
 			if (player2boats[guessy][guessx].equalsIgnoreCase(" X ")){
-				player2boats[guessy][guessx] = " X ";
+				player2boats[guessy][guessx] = " H ";
 				player1guesses[guessy][guessx] = " X ";
 				printingPress(player1guesses);
 				System.out.println("Hit");
@@ -398,7 +398,7 @@ class Final {
 				
 				// and then create a checker for that
 				if (player2boats[guessy][guessx].equalsIgnoreCase(" X ")){
-					player2boats[guessy][guessx] = " X ";
+					player2boats[guessy][guessx] = " H ";
 					player1guesses[guessy][guessx] = " X ";
 					printingPress(player1guesses);
 					System.out.println("Hit");
@@ -429,8 +429,8 @@ class Final {
 			
 			// and then create a checker for that
 			if (player1boats[guessy][guessx].equalsIgnoreCase(" X ")){
-				player1boats[guessy][guessx] = " X ";
-				player2guesses[guessy][guessx] = " X 2";
+				player1boats[guessy][guessx] = " H ";
+				player2guesses[guessy][guessx] = " X ";
 				printingPress(player2guesses);
 				System.out.println("Hit");
 				hitsp2++;
@@ -460,7 +460,7 @@ class Final {
 				
 				// and then create a checker for that
 				if (player1boats[guessy][guessx].equalsIgnoreCase(" X ")){
-					player1boats[guessy][guessx] = " X ";
+					player1boats[guessy][guessx] = " H ";
 					player2guesses[guessy][guessx] = " X ";
 					printingPress(player2guesses);
 					System.out.println("Hit");
