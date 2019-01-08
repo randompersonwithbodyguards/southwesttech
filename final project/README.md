@@ -14,9 +14,9 @@ you must start with the uppermost or leftmost coordinate first. the boat placeme
 wait for the screen to clear before handing the computer to your opponent.
 
 ##Code Example
-
 this is a code snippet that places the boats
-for (int count = 0; count < 3; count++){
+
+	for (int count = 0; count < 3; count++){
 				
 				player2boats[workingY][workingX] = " X ";
 				
@@ -28,6 +28,8 @@ for (int count = 0; count < 3; count++){
 					workingX++;
 				}
         
+![placing the boats](bloop.png)
+	
 ##Motivation       
 
 my motivation for creating this is i thought it would be pretty cool if i was able to do it and it was
