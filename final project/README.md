@@ -28,7 +28,7 @@ this is a code snippet that places the boats
 					workingX++;
 				}
         
-![placing the boats](bloop.png)
+![placing the boats](Bloop.png)
 	
 ##Motivation       
 
