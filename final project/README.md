@@ -4,7 +4,7 @@
 
 This project is just an ascii version of battleship. It is meant to be played by two different people on a local computer.
 
-##How to play
+## How to play
 
 Just follow the instructions on the screen, and it will tell you what to do :)
 
@@ -13,7 +13,7 @@ read the instructions carefully, cause if you type things wrong it might skip im
 you must start with the uppermost or leftmost coordinate first. the boat placement system doesnt work the other way
 wait for the screen to clear before handing the computer to your opponent.
 
-##Code Example
+## Code Example
 this is a code snippet that places the boats
 
 	for (int count = 0; count < 3; count++){
@@ -30,7 +30,7 @@ this is a code snippet that places the boats
         
 ![placing the boats](Bloop.png)
 	
-##Motivation       
+## Motivation       
 
 my motivation for creating this is i thought it would be pretty cool if i was able to do it and it was
 
