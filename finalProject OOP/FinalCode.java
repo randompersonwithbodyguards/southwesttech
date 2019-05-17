@@ -25,6 +25,7 @@ public class FinalCode extends Application {
 		
 	TextField ansnumerator;
 	TextField ansdenominator;
+	TextField anscoefficient;
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -60,7 +61,7 @@ public class FinalCode extends Application {
 		StackPane equalscentering = new StackPane();
 		equalscentering.getChildren().add(equals);
 		
-		TextField anscoefficient = new TextField();
+		anscoefficient = new TextField();
 		anscoefficient.setPrefWidth(45);
 		StackPane anscentering   = new StackPane();
 		anscentering.getChildren().add(anscoefficient);
@@ -87,10 +88,10 @@ public class FinalCode extends Application {
 		f2Vbox.getChildren().addAll(f2numerator,f2dividing, f2denominator);
 		
 		//ansVbox
-		TextField ansnumerator   = new TextField();
+		ansnumerator   = new TextField();
 		ansnumerator.setPrefWidth(45);
 		Label ansdividing        = new Label("————");
-		TextField ansdenominator = new TextField();
+		ansdenominator = new TextField();
 		ansdenominator.setPrefWidth(45);
 		ansVbox.getChildren().addAll(ansnumerator,ansdividing, ansdenominator);
 		
@@ -203,12 +204,10 @@ public class FinalCode extends Application {
 			
 			fraction1.mixedConvert();
 			fraction2.mixedConvert();
+						
+			ansnumerator.setText(Integer.toString(fraction1.getNumerator() + fraction2.getNumerator()));
 			
-			String answerTop = Integer.toString(fraction1.getNumerator() + fraction2.getNumerator());
-			
-			System.out.println(answerTop);
-			
-			//ansdenominator.setText(Integer.toString(fraction1.getDenominator()));
+			ansdenominator.setText(Integer.toString(fraction1.getDenominator()));
 			
 			
 			
@@ -224,15 +223,36 @@ public class FinalCode extends Application {
 
 			fraction1.mixedConvert();
 			fraction2.mixedConvert();
-		}
-		/*else if(){
 			
-		}
-		else if(){
+			ansnumerator.setText(Integer.toString(fraction1.getNumerator() - fraction2.getNumerator()));
 			
-		} */
+			ansdenominator.setText(Integer.toString(fraction1.getDenominator()));
+
+		}
+		else if(multiplyBoolean){
+			fraction1.mixedConvert();
+			fraction2.mixedConvert();
+			
+			ansnumerator.setText(Integer.toString(fraction1.getNumerator() * fraction2.getNumerator()));
+			
+			ansdenominator.setText(Integer.toString(fraction1.getDenominator() * fraction2.getDenominator()));
+		}
+		else if(divideBoolean){
+			fraction1.mixedConvert();
+			fraction2.mixedConvert();
+			
+			int newNumerator = fraction2.getDenominator();
+			fraction2.setDenominator(fraction2.getNumerator());
+			fraction2.setNumerator(newNumerator);
+			
+			ansnumerator.setText(Integer.toString(fraction1.getNumerator() * fraction2.getNumerator()));
+			
+			ansdenominator.setText(Integer.toString(fraction1.getDenominator() * fraction2.getDenominator()));
+			
+
+		} 
 		else {
-			System.out.println("Errorrrrr");
+			System.out.println("u probably didnt pick a buttonn nnnnnnnnnn");
 		}
 	}
 	
