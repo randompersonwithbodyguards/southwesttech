@@ -27,7 +27,3 @@ it seemed like a simple enough premise and fun to code so i did it.
 ## Tests
 
 Describe and show how to run the tests with code examples.
-
-## License
-
-A short snippet describing the license (MIT, Apache, etc.)
