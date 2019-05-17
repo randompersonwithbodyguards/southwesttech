@@ -22,6 +22,7 @@ public class FinalCode extends Application {
 	
 	FractionObject fraction1 = new FractionObject();
 	FractionObject fraction2 = new FractionObject();
+	FractionObject fraction3 = new FractionObject();
 		
 	TextField ansnumerator;
 	TextField ansdenominator;
@@ -34,6 +35,12 @@ public class FinalCode extends Application {
 		
 		GridPane grid   = new GridPane();
 		Button simplify = new Button("Simplify");
+		simplify.setOnAction(new EventHandler<ActionEvent>() {
+			@Override // Override the handle method
+			public void handle(ActionEvent e) {
+				passSimplify();
+			}});
+
 		Button clear    = new Button("Clear");
 		grid.add(clear, 1, 2);
 		grid.add(simplify, 2, 2);
@@ -63,6 +70,7 @@ public class FinalCode extends Application {
 		
 		anscoefficient = new TextField();
 		anscoefficient.setPrefWidth(45);
+		anscoefficient.setText("0");
 		StackPane anscentering   = new StackPane();
 		anscentering.getChildren().add(anscoefficient);
 		
@@ -105,7 +113,7 @@ public class FinalCode extends Application {
 				f2coefficient.setText("0");
 				f2numerator.setText("");
 				f2denominator.setText("");
-				anscoefficient.setText("");
+				anscoefficient.setText("0");
 				ansnumerator.setText("");
 				ansdenominator.setText("");
 			}
@@ -167,6 +175,7 @@ public class FinalCode extends Application {
 				public void handle(ActionEvent e) {
 					setObject(Integer.parseInt(f1coefficient.getText()), Integer.parseInt(f1numerator.getText()), Integer.parseInt(f1denominator.getText()), Integer.parseInt(f2coefficient.getText()), Integer.parseInt(f2numerator.getText()), Integer.parseInt(f2denominator.getText()));
 					solveImproper();
+					
 			}});
 		solveMixed.setOnAction(e -> {
 			setObject(Integer.parseInt(f1coefficient.getText()), Integer.parseInt(f1numerator.getText()), Integer.parseInt(f1denominator.getText()), Integer.parseInt(f2coefficient.getText()), Integer.parseInt(f2numerator.getText()), Integer.parseInt(f2denominator.getText()));
@@ -191,8 +200,21 @@ public class FinalCode extends Application {
 		}
 	}
 	public void solveMixed(){
+		solveImproper();
+		fraction3.setNumerator(Integer.parseInt(ansnumerator.getText()));
+		fraction3.setDenominator(Integer.parseInt(ansdenominator.getText()));
+		fraction3.setCoefficient(Integer.parseInt(anscoefficient.getText()));	
+			
+		int pass = recursiveGCD(fraction3.getNumerator(), fraction3.getDenominator());
+			fraction3.simplify(pass);
+			
+		fraction3.improperConvert();
 		
+		anscoefficient.setText(Integer.toString(fraction3.getCoefficient()));
+		ansdenominator.setText(Integer.toString(fraction3.getDenominator()));
+		ansnumerator.setText(Integer.toString(fraction3.getNumerator()));
 	}
+	
 	public void solveImproper(){
 		if (addBoolean) {
 			int gcd = recursiveGCD(fraction1.getDenominator(), fraction2.getDenominator());
@@ -209,7 +231,7 @@ public class FinalCode extends Application {
 			
 			ansdenominator.setText(Integer.toString(fraction1.getDenominator()));
 			
-			
+			passSimplify();
 			
 			
 		} 
@@ -224,10 +246,11 @@ public class FinalCode extends Application {
 			fraction1.mixedConvert();
 			fraction2.mixedConvert();
 			
+			
 			ansnumerator.setText(Integer.toString(fraction1.getNumerator() - fraction2.getNumerator()));
 			
 			ansdenominator.setText(Integer.toString(fraction1.getDenominator()));
-
+			passSimplify();
 		}
 		else if(multiplyBoolean){
 			fraction1.mixedConvert();
@@ -236,6 +259,7 @@ public class FinalCode extends Application {
 			ansnumerator.setText(Integer.toString(fraction1.getNumerator() * fraction2.getNumerator()));
 			
 			ansdenominator.setText(Integer.toString(fraction1.getDenominator() * fraction2.getDenominator()));
+			passSimplify();
 		}
 		else if(divideBoolean){
 			fraction1.mixedConvert();
@@ -248,12 +272,14 @@ public class FinalCode extends Application {
 			ansnumerator.setText(Integer.toString(fraction1.getNumerator() * fraction2.getNumerator()));
 			
 			ansdenominator.setText(Integer.toString(fraction1.getDenominator() * fraction2.getDenominator()));
-			
+			passSimplify();
 
 		} 
 		else {
 			System.out.println("u probably didnt pick a buttonn nnnnnnnnnn");
 		}
+	int pass = recursiveGCD(fraction3.getNumerator(), fraction3.getDenominator());
+		fraction3.simplify(pass);
 	}
 	
 	public  void setObject(int f1coefficient,int f1numerator, int f1denominator, int f2coefficient, int f2numerator, int f2denominator){
@@ -264,5 +290,16 @@ public class FinalCode extends Application {
 		fraction2.setNumerator(f2numerator);
 		fraction2.setDenominator(f2denominator);
 		fraction2.setCoefficient(f2coefficient);
+	}
+	public void passSimplify(){
+		fraction3.setNumerator(Integer.parseInt(ansnumerator.getText()));
+		fraction3.setDenominator(Integer.parseInt(ansdenominator.getText()));
+		fraction3.setCoefficient(Integer.parseInt(anscoefficient.getText()));	
+			
+		int pass = recursiveGCD(fraction3.getNumerator(), fraction3.getDenominator());
+			fraction3.simplify(pass);
+			
+			ansnumerator.setText(Integer.toString(fraction3.getNumerator()));
+			ansdenominator.setText(Integer.toString(fraction3.getDenominator()));
 	}
 }

@@ -45,27 +45,24 @@ public class FractionObject{
 		this.coefficient = newnum;
 	}
 	
-	
+	//improper TO mixed
 	public void improperConvert(){
-		if (this.coefficient != 0) {
-			setCoefficient(this.numerator / this.denominator);
+		if (this.coefficient == 0) {
+			System.out.println("it not zero anymore");
+			double pass = Math.floor(this.numerator/this.denominator);
+			setCoefficient((int)pass);
 			setNumerator(this.numerator % this.denominator);
 		}
 		else {
 			setCoefficient(this.coefficient);
+			System.out.println("it not detecting");
 		}
 	}
 	
 	public void simplify(int gcdNumber){
 		setNumerator(this.numerator / gcdNumber);
 		setDenominator(this.denominator / gcdNumber);
-		double pass1 = this.numerator;
-		double pass2 = this.denominator;
-		if (Math.floor(pass1 / pass2) != 0) {
-			int cache = this.getNumerator() + (int)Math.floor(pass1 / pass2);
-			setCoefficient(cache);
-			setNumerator(this.numerator % this.denominator);
-		}
+	
 				
 	}
 	//FROM mixed TO improper
