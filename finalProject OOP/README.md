@@ -20,13 +20,9 @@ public void solveImproper(){
 			ansdenominator.setText(Integer.toString(fraction1.getDenominator()));
   ```	
 
-##Using
+## Using
 just type in your two fractions in the text boxes and press the button to solve it. If you want to simplify, then type the fraction you want to simplify into the answer field and press simplify.
 
 ## Motivation
 
-it seemed like a simple enough premise and fun to code so i did it.
-
-## Tests
-
-Describe and show how to run the tests with code examples.
+It seemed like a simple enough premise and like it would be interesting to code so I did it.
